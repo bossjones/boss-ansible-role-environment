@@ -1,5 +1,5 @@
 ---
-# defaults file for boss-ansible-environment
+# defaults file for boss-ansible-role-environment
 # shamlessly based on debops.environment!!!!!!!!!
 # learning purposes only!
 

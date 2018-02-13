@@ -15,7 +15,7 @@ guest_cache_path = '/tmp/vagrant-cache'
 default = {
   :user => ENV['OS_USER'] || 'vagrant',
   :project => File.basename(Dir.getwd),
-  :ansible_project_name => ENV['_ANSIBLE_PROJECT_NAME'] || 'boss-ansible-environment'
+  :ansible_project_name => ENV['_ANSIBLE_PROJECT_NAME'] || 'boss-ansible-role-environment'
 }
 
 VM_NODENAME = "vagrant-#{default[:user]}-#{default[:project]}"
@@ -204,7 +204,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, inline: $docker_script
 
   # shared folder setup
-  config.vm.synced_folder ".", "/home/vagrant/boss-ansible-environment"
+  config.vm.synced_folder ".", "/home/vagrant/boss-ansible-role-environment"
 
   # copy private key so hosts can ssh using key authentication (the script below sets permissions to 600)
   config.vm.provision :file do |file|
